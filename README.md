@@ -79,7 +79,7 @@ INNER JOIN BRANCHES b
 ORDER BY t.transaction_date;
 
 ```
-![INNER JOIN](Screenshots/SQL JOINS/1.INNER JOIN.png)
+![INNER JOIN](Screenshots/SQL%20JOINS/1.INNER%20JOIN.png)
 
 This query retrieves all transactions together with the customer who performed them and the branch they belong to. It helps management track branch-level activity and transaction volumes.
 
@@ -101,7 +101,7 @@ LEFT JOIN BRANCHES b
 WHERE t.transaction_id IS NULL;           -- filter customers with no transactions
 
 ```
-![LEFT INNER JOIN](Screenshots/SQL JOINS/2. LEFT INNER JOIN.png)
+![LEFT INNER JOIN](Screenshots/SQL%20JOINS/2.LEFT%20INNER%20JOIN.png)
 
 This identifies inactive customers who have not yet performed any transactions. The bank can target these customers with promotions or engagement campaigns.
 
@@ -118,7 +118,7 @@ RIGHT JOIN ACCOUNTS a
 RIGHT JOIN TRANSACTIONS t 
     ON a.account_id = t.account_id;
 ```
-![RIGHT INNER JOIN](Screenshots/SQL JOINS/3.RIGHT INNER JOIN.png)
+![RIGHT INNER JOIN](Screenshots/SQL%20JOINS/3.RIGHT%20INNER%20JOIN.png)
 
 This query ensures that every transaction is displayed even if some customer information is missing, though for our case no information is missing. It helps the bank verify transaction completeness and detect possible data inconsistencies. 
 
@@ -138,7 +138,7 @@ FULL OUTER JOIN TRANSACTIONS t
     ON a.account_id = t.account_id
 ORDER BY c.full_name;
 ```
-![FULL INNER JOIN](Screenshots/SQL JOINS/4.FULL INNER JOIN.png)
+![FULL INNER JOIN](Screenshots/SQL%20JOINS/4.FULL%20INNER%20JOIN.png)
 
 This rovides a full overview of all customers, including those with and without transactions. This helps the bank reconcile accounts and understand overall customer activity.
 
@@ -156,7 +156,7 @@ JOIN CUSTOMERS c2
     ON c1.registration_date = c2.registration_date
     AND c1.customer_id < c2.customer_id;
 ```
-![SELF JOIN](Screenshots/SQL JOINS/5.SELF JOIN.png)
+![SELF JOIN](Screenshots/SQL%20JOINS/5.SELF%20JOIN.png)
 
 This query identifies customers who registered on the same day. The bank can use this information to analyze customer acquisition patterns or evaluate the effectiveness of specific marketing campaigns launched on certain dates.
 
@@ -184,7 +184,7 @@ FROM (
 )
 WHERE rank_no <= 3;
 ```
-![Ranking function](Screenshots/SQL Window functions/1.Ranking funnction.png)
+![Ranking function](Screenshots/SQL%20Window%20functions/1.Ranking%20funnction.png)
 
 This query ranks customers within each branch according to their total transaction value. It helps the bank identify high-value customers in each region. These customers can be targeted for premium services and loyalty programs.
 
@@ -206,7 +206,7 @@ JOIN BRANCHES b ON c.branch_id = b.branch_id
 GROUP BY b.branch_name, TRUNC(t.transaction_date,'MM')
 ORDER BY b.branch_name, month;
 ```
-![Aggregate window function](Screenshots/SQL Window functions/2.Aggregare window funnction.png)
+![Aggregate window function](Screenshots/SQL%20Window%20functions/2.Aggregare%20window%20funnction.png)
 
 
 This query calculates transaction totals in different months for each branch. It allows management to monitor financial growth trends continuously. This helps in forecasting revenue performance.
@@ -236,7 +236,7 @@ FROM (
     GROUP BY b.branch_name, TRUNC(t.transaction_date,'MM')
 );
 ```
-![Navigate function](Screenshots/SQL Window functions/3.Navigate funnction.png)
+![Navigate function](Screenshots/SQL%20Window%20functions/3.Navigate%20funnction.png)
 
 
 This query compares each month’s transaction amount with the previous month using the LAG function. It helps management measure growth or decline in branch performance. This insight supports timely operational decisions.
@@ -256,7 +256,7 @@ JOIN ACCOUNTS a ON t.account_id = a.account_id
 JOIN CUSTOMERS c ON a.customer_id = c.customer_id
 GROUP BY c.full_name;
 ```
-![Distribution function](Screenshots/SQL Window functions/4.Distribution funnction.png)
+![Distribution function](Screenshots/SQL%20Window%20functions/4.Distribution%20funnction.png)
 
 
 This query segments customers into four groups by total transaction value, with the first quartile as the highest-value and the fourth quartile as the lowest. It helps the bank target marketing and focus on retaining top customers.
