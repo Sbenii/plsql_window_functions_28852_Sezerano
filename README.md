@@ -54,7 +54,7 @@ The schema captures transactional activities across physical branches and online
 
 ## ER Diagram
 
-![ER Diagram](Screenshots/ER diagram.png)
+![ER Diagram](Screenshots/ER%20diagram.png)
 
 # SQL Joins and Implementations
 
